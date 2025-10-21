@@ -28,7 +28,10 @@ def convert_length(value, from_unit, to_unit):
         return None
     meters = value * LENGTH_TO_METERS[from_unit]
     result = meters / LENGTH_TO_METERS[to_unit]
-    return round(result, 6)
+
+    # Round to more decimal places for very small values
+    precision = 10 if abs(result) < 1e-6 else 6
+    return round(result, precision)
 
 def convert_weight(value, from_unit, to_unit):
     """Convert weight between units"""
