@@ -1,0 +1,12 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "date": "2025-10-21",
+      "description": "Lunch",
+      "amount": 20.0,
+      "category": "Food"
+    }
+  ],
+  "budgets": {}
+}
