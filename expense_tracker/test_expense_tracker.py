@@ -1,13 +1,12 @@
 import pytest
 import os
-import json
 from datetime import datetime
 import csv
 from io import StringIO
 from contextlib import redirect_stdout
 from expense_tracker import (
     load_expenses, save_expenses, add_expense, update_expense, delete_expense,
-    list_expenses, summary, set_budget, export_to_csv, DATA_FILE
+    list_expenses, summary, set_budget, export_to_csv
 )
 
 @pytest.fixture
@@ -166,7 +165,6 @@ def test_set_budget_invalid_amount(temp_data_file):
 def test_summary_with_budget_warning(temp_data_file):
     now = datetime.now()
     month = now.month
-    year = now.year
     set_budget(month, 25.0)
     add_expense("Lunch", 20.0)
     add_expense("Dinner", 10.0)

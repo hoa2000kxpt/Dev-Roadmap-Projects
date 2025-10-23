@@ -4,8 +4,7 @@ import json
 import os
 import sys
 from datetime import datetime
-from unittest.mock import patch, mock_open
-from io import StringIO
+from unittest.mock import patch
 
 # Import the task tracker module
 import task_tracker
@@ -175,9 +174,9 @@ class TestAddTask:
     
     def test_add_task_sets_timestamps(self, setup_teardown, capsys):
         """Should set createdAt and updatedAt timestamps."""
-        before = datetime.now().isoformat()
+        datetime.now().isoformat()
         task_tracker.add_task("Test task")
-        after = datetime.now().isoformat()
+        datetime.now().isoformat()
         
         tasks = task_tracker.load_tasks()
         assert 'createdAt' in tasks[0]

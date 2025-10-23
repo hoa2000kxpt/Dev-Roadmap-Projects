@@ -65,7 +65,7 @@ class NumberGuessingGame:
 
         while chances > 0:
             try:
-                guess_input = input(f"Enter your guess (1-100) or 'h' for hint: ").strip()
+                guess_input = input("Enter your guess (1-100) or 'h' for hint: ").strip()
                 
                 if guess_input.lower() == 'h':
                     hints_left = self.use_hint(secret_number, 1, 100, hints_left)
@@ -82,7 +82,7 @@ class NumberGuessingGame:
                 if guess == secret_number:
                     elapsed_time = time.time() - start_time
                     print("\n" + "="*60)
-                    print(f"🎉 Congratulations! You guessed the correct number!")
+                    print("🎉 Congratulations! You guessed the correct number!")
                     print(f"   Number: {secret_number}")
                     print(f"   Attempts: {attempts}")
                     print(f"   Time: {elapsed_time:.1f} seconds")
@@ -108,7 +108,7 @@ class NumberGuessingGame:
                 continue
 
         print("\n" + "="*60)
-        print(f"❌ Game Over! You've run out of chances.")
+        print("❌ Game Over! You've run out of chances.")
         print(f"   The correct number was: {secret_number}")
         print(f"   You made {attempts} attempts.")
         print("="*60 + "\n")

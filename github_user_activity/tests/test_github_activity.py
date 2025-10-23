@@ -4,9 +4,8 @@ Comprehensive test suite for GitHub User Activity CLI using Pytest and Mocking
 
 import pytest
 import json
-from unittest.mock import patch, MagicMock, mock_open
+from unittest.mock import patch, MagicMock
 from urllib.error import HTTPError, URLError
-from io import StringIO
 
 # Import functions from the main module
 import sys

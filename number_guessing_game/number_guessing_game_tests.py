@@ -3,9 +3,7 @@ Number Guessing Game Tests:
 """
 
 import pytest
-from unittest.mock import patch, MagicMock
-from io import StringIO
-import sys
+from unittest.mock import patch
 from number_guessing_game import NumberGuessingGame
 
 
@@ -139,7 +137,7 @@ class TestGameLogic:
     
     def test_correct_guess_wins(self):
         """Test that correct guess results in win"""
-        game = NumberGuessingGame()
+        NumberGuessingGame()
         with patch('builtins.input', side_effect=['50']):
             with patch('builtins.print'):
                 with patch('random.randint', return_value=50):
@@ -365,7 +363,7 @@ class TestEdgeCases:
     def test_game_state_reset_between_rounds(self):
         """Test that game state resets for new rounds"""
         game = NumberGuessingGame()
-        old_high_scores = game.high_scores.copy()
+        game.high_scores.copy()
         game.high_scores['easy'] = 5
         # High scores should persist, not reset
         assert game.high_scores['easy'] == 5

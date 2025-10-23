@@ -207,8 +207,8 @@ def main():
             print_usage()
             sys.exit(1)
     
-    except ValueError as e:
-        print(f"Error: Invalid task ID. Task ID must be an integer")
+    except ValueError:
+        print("Error: Invalid task ID. Task ID must be an integer")
         sys.exit(1)
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
